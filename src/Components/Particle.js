@@ -1,4 +1,4 @@
-import Particles from 'react-particles-js';
+import Particles from "react-particles-js";
 
 import React from 'react';
 
@@ -68,5 +68,4 @@ function Particle() {
     </>
   )
 }
-
 export default Particle;
