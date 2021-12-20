@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import SmallTitle from "../Components/SmallTitle";
+import SmallTitle from "./SmallTitle";
 import SchoolIcon from "@material-ui/icons/School";
-import EducationItem from "../Components/EducationItem";
+import EducationItem from "./EducationItem";
 
 function Education() {
   const school = <SchoolIcon />;
