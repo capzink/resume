@@ -15,7 +15,7 @@ const portfolios = [
     id: 9,
     category: "React JS",
     image: portfolio,
-    link1: "https://github.com/capzink/Vanilla-JSprojects/tree/main/Drum_Kit",
+    link1: "https://github.com/capzink/resume",
     link2: "https://rickymortycapzink.netlify.app",
     title: "React JS",
     text: "Portfolio using React JS and Styled components",

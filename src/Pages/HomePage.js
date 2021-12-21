@@ -13,7 +13,7 @@ function HomePage() {
         </div>
         <div className="typography">
           <h1>
-            You Only Need to Know One Thing About Me
+            You Only Need to Know One Thing About Me,
           </h1>
           <h2>
            <span>I Can Learn Anything</span>
