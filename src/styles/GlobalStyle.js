@@ -93,6 +93,19 @@ h1{
         font-size: 3rem
     }
 }
+h2{
+    font-size: 3.2rem;
+    color: var(--primary-color);
+    span{
+        font-size: 3.2rem;
+        @media screen and (max-width: 502px){
+            font-size: 3.2rem
+        }
+    }
+    @media screen and (max-width: 502px){
+        font-size: 3rem
+    }
+}
 
 span{
     color: var(--primary-color);

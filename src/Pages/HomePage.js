@@ -13,11 +13,15 @@ function HomePage() {
         </div>
         <div className="typography">
           <h1>
-            Hi, I'm <span>Carlos Pinzon</span>
+            You Only Need to Know One Thing
           </h1>
+          <h2>
+           <span>I Can Learn Anything</span>
+          </h2>
           <p>
-            Full Stack developer with experience building single-page Web
-            applications with MERN Stack and a knack for creating attractive user interfaces
+            Full Stack developer with experienced building single-page Web
+            applications and a knack for creating attractive
+            user interfaces using MERN stack
           </p>
           <div className="icons">
             <a
@@ -47,6 +51,8 @@ const HomePageStyled = styled.header`
         transform: translate(-50%, -50%);
         text-align: center;
         width: 80%;
+
+      
 
         .icons{
             display: flex;
