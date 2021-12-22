@@ -11,29 +11,31 @@ function ImageSection() {
         </div>
         <div className="right-content">
           <p className="paragraph">
-            Experienced manager with multicultural work exposure in different
-            continents. Worked in different projects with cross functional teams
-            to deliver products on time an on budget.
+            Seasoned professional and experienced manager with exposure across
+            different continents and multicultural work. Managed multiple
+            projects by partnering with cross functional teams to deliver
+            products on time and on budget.
           </p>
           <p className="paragraph">
-            In early 2020 as the World came to a halt, I started coding as a
-            side project and realized this was something I wanted to persue.
+            n early 2020 as the world came to a halt, I revisited my passion for
+            coding and jump started a side project that turned into a new career
+            pursuit.
           </p>
           <p className="paragraph">
-            I am currently a full Stack Developer. My specialties include
-            learning new skills, responsive design principles, website
-            optimization and (MVC) methods of organizing code. Check out my Skills and Resume for more information
+            As a Full Stack Developer, my specialties include responsive design
+            principles, website optimization and (MVC) methods of organizing
+            code. My strongest skill is learning new skills - there isn’t a
+            puzzle I don’t want to solve. See my full resume here for further
+            information.
           </p>
           <div className="about-info">
             <div className="info-title">
-              <p>Age</p>
               <p>Nationality </p>
               <p>Languages </p>
               <p>Location</p>
             </div>
             <div className="info">
-              <p>: 39</p>
-              <p>: Colombia</p>
+              <p>: Colombian</p>
               <p>: Spanish, English </p>
               <p>: Bogota, Colombia</p>
             </div>

@@ -19,7 +19,7 @@ function HomePage() {
            <span>I Can Learn Anything</span>
           </h2>
           <p>
-            Full Stack developer with experienced building single-page Web
+            Full Stack developer with experience building single-page Web
             applications and a knack for creating attractive
             user interfaces using MERN stack
           </p>
