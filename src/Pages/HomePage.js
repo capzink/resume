@@ -51,9 +51,7 @@ const HomePageStyled = styled.header`
         transform: translate(-50%, -50%);
         text-align: center;
         width: 80%;
-
-      
-
+        
         .icons{
             display: flex;
             justify-content: center;

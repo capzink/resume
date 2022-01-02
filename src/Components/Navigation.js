@@ -3,34 +3,69 @@ import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
 import avatar from '../img/avatar.jpg';
 
-function Navigation() {
-    return (
-        <NavigationStyled>
-            <div className="avatar">
-                <img src={avatar} alt=""/>
-            </div>
-            <ul className="nav-items">
-                <li className="nav-item">
-                    <NavLink to="/" activeClassName="active-class" exact>Home()</NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink to="/about" activeClassName="active-class" exact>About()</NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink to="/resume" activeClassName="active-class" exact>Resume()</NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink to="/portfolios" activeClassName="active-class" exact>Projects()</NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink to="/contact" activeClassName="active-class" exact>Contact()</NavLink>
-                </li>
-            </ul>
-            <footer className="footer">
-                <p>@capzink 2021</p>
-            </footer>
-        </NavigationStyled>
-    )
+function Navigation({ navToggle, setNavToggle }) {
+  return (
+    <NavigationStyled>
+      <div className="avatar">
+        <img src={avatar} alt="" />
+      </div>
+      <ul className="nav-items">
+        <li className="nav-item">
+          <NavLink
+            onClick={() => setNavToggle(!navToggle)}
+            to="/"
+            activeClassName="active-class"
+            exact
+          >
+            Home()
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            onClick={() => setNavToggle(!navToggle)}
+            to="/about"
+            activeClassName="active-class"
+            exact
+          >
+            About()
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            onClick={() => setNavToggle(!navToggle)}
+            to="/resume"
+            activeClassName="active-class"
+            exact
+          >
+            Resume()
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            onClick={() => setNavToggle(!navToggle)}
+            to="/portfolios"
+            activeClassName="active-class"
+            exact
+          >
+            Projects()
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            onClick={() => setNavToggle(!navToggle)}
+            to="/contact"
+            activeClassName="active-class"
+            exact
+          >
+            Contact()
+          </NavLink>
+        </li>
+      </ul>
+      <footer className="footer">
+        <p>@capzink 2021</p>
+      </footer>
+    </NavigationStyled>
+  );
 }
 
 const NavigationStyled = styled.nav`

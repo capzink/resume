@@ -2,16 +2,16 @@ import React from 'react'
 import styled from 'styled-components';
 import Navigation from './Navigation';
 
-function Sidebar({navToggle}) {
-    return (
-        <SidebarStyled className={`${navToggle ? 'nav-toggle' : ''}`}>
-            <Navigation />
-        </SidebarStyled>
-    )
+function Sidebar({ navToggle, setNavToggle }) {
+  return (
+    <SidebarStyled className={`${navToggle ? "nav-toggle" : ""}`}>
+      <Navigation navToggle={navToggle} setNavToggle={setNavToggle} />
+    </SidebarStyled>
+  );
 }
 
 const SidebarStyled = styled.div`
-    width: 16.3rem;
+    width: 13.3rem;
     position: fixed;
     height: 100vh;
     background-color: var(--sidebar-dark-color);

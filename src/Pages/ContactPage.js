@@ -13,47 +13,47 @@ function ContactPage() {
   const phone = <PhoneIcon />;
   const email = <EmailIcon />;
   const location = <LocationOnIcon />;
-  const initialValues = { name: "", user_email: "", message: "" };
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
+
+const [values, setValues] = useState({ firstname: "", email: "", message: "" });
+const [errors, setErrors]= useState({})
+const [isSubmit, setSubmit] = useState(false)
+
 
 const handleChange = (e) => {
-     const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
+  const name = e.target.name;
+  const value = e.target.value;
+  setValues({ ...values, [name]: value });
+  console.log(values);
 };
 
-  const SendEmail = (e) => {
-    e.preventDefault();
-     setFormErrors(validate(formValues));
-     setIsSubmit(true);
- 
-  };
+const HandleSubmit = (e) => {
+  e.preventDefault();
+  setErrors(validate(values));
+  setSubmit(true)
+  
+};
 
-  useEffect(() => {
-    
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(formValues);
-    }
-  }, [formErrors]);
+useEffect(()=>{
+  console.log(errors);
+  if(Object.keys(errors).length === 0 && isSubmit)
+  console.log(values);
 
-  const validate = (values) => {
-    const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.name) {
-      errors.username = "Username is required!";
-    }
-    if (!values.user_email) {
-      errors.email = "Email is required!";
-    } else if (!regex.test(values.user_email)) {
-      errors.email = "This is not a valid email format!";
-    }
-    if (!values.message) {
-      errors.message = "Message is required";
+},[errors])
 
-    } 
-    return errors;
-  };
+const validate =(input)=>{
+  const errors ={}
+  if(!input.firstname){
+    errors.firstname = 'Your Name Is Required'
+  }
+  if (!input.email) {
+    errors.email = "Your Email Is Required";
+  }
+  if (!input.message) {
+    errors.message = "Your Message Is Required";
+  }
+  return errors
+
+}
 
   return (
     <MainLayout>
@@ -64,25 +64,26 @@ const handleChange = (e) => {
             <div className="contact-title">
               <h4>Get In Touch</h4>
             </div>
-            <form className="form" onSubmit={SendEmail}>
+            <form className="form" onSubmit={HandleSubmit}>
+              <p className="error">{errors.firstname}</p>
               <div className="form-field">
                 <label htmlFor="name">Name*</label>
                 <input
                   type="text"
                   id="name"
-                  name="name"
-                  value={formValues.name}
+                  name="firstname"
+                  value={values.firstname}
                   onChange={handleChange}
                 />
               </div>
-              <p>{formErrors.name}</p>
+              <p className="error">{errors.email}</p>
               <div className="form-field">
                 <label htmlFor="email">Email*</label>
                 <input
                   type="email"
                   id="email"
-                  name="user_email"
-                  value={formValues.user_email}
+                  name="email"
+                  value={values.email}
                   onChange={handleChange}
                 />
               </div>
@@ -90,6 +91,7 @@ const handleChange = (e) => {
                 <label htmlFor="subject">Subject</label>
                 <input type="text" id="subject" name="subject" />
               </div>
+              <p className="error">{errors.message}</p>
               <div className="form-field">
                 <label htmlFor="text-area">Your Message*</label>
                 <textarea
@@ -97,12 +99,12 @@ const handleChange = (e) => {
                   id="textarea"
                   cols="30"
                   rows="10"
-                  value={formValues.message}
+                  value={values.message}
                   onChange={handleChange}
                 ></textarea>
               </div>
               <div className="form-field f-button">
-                <PrimaryButton title={"Send Email"} />
+                <PrimaryButton title={"Email Carlos"} type="submit" />
               </div>
             </form>
           </div>
@@ -133,6 +135,11 @@ const handleChange = (e) => {
 }
 
 const ContactPageStyled = styled.section`
+
+.error {
+  color:red;
+  margin-top:0.5rem;
+}
   .contact-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
