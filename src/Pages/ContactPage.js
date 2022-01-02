@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import styled from "styled-components";
 import { MainLayout, InnerLayout } from "../styles/Layouts";
 import emailjs from "emailjs-com";
@@ -9,6 +9,7 @@ import EmailIcon from "@material-ui/icons/Email";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import ContactItem from "../Components/ContactItem";
 
+
 function ContactPage() {
   const phone = <PhoneIcon />;
   const email = <EmailIcon />;
@@ -17,39 +18,46 @@ function ContactPage() {
 const [values, setValues] = useState({ firstname: "", email: "", message: "" });
 const [errors, setErrors]= useState({})
 const [isSubmit, setSubmit] = useState(false)
+const [confMessage, setConfMessage] = useState('')
+
 
 
 const handleChange = (e) => {
   const name = e.target.name;
   const value = e.target.value;
   setValues({ ...values, [name]: value });
-  console.log(values);
+  
 };
 
 const HandleSubmit = (e) => {
   e.preventDefault();
   setErrors(validate(values));
   setSubmit(true)
+  setValues({ firstname: "", email: "", message: "" });
+  setConfMessage("Email Sent");
+  if(Object.keys(errors).length === 0){
+    emailjs.sendForm(
+      "service_yyt8nz6",
+      "template_yl8acmc",
+      e.target,
+      "user_eud4qkbSwRMNUXdVHPnkJ"
+    ).then(res=>{
+      console.log(res);
+    }).catch(err=>console.log(err))
+  }
   
+ 
 };
-
-useEffect(()=>{
-  console.log(errors);
-  if(Object.keys(errors).length === 0 && isSubmit)
-  console.log(values);
-
-},[errors])
-
 const validate =(input)=>{
   const errors ={}
   if(!input.firstname){
-    errors.firstname = 'Your Name Is Required'
+    errors.firstname = 'Your Name Is Require'
   }
   if (!input.email) {
-    errors.email = "Your Email Is Required";
+    errors.email = "Your Email Is Require";
   }
   if (!input.message) {
-    errors.message = "Your Message Is Required";
+    errors.message = "Your Message Is Require";
   }
   return errors
 
@@ -107,6 +115,7 @@ const validate =(input)=>{
                 <PrimaryButton title={"Email Carlos"} type="submit" />
               </div>
             </form>
+            {Object.keys(errors).length === 0 && isSubmit ? confMessage : ""}
           </div>
           <div className="right-content">
             <ContactItem
