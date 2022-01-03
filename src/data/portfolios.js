@@ -7,6 +7,7 @@ import notes from "../img/projectimage/notes.png";
 import ricky from "../img/projectimage/rickymorty.png";
 import rpsjs from "../img/projectimage/rpsjs.png";
 import portfolio from "../img/projectimage/portfolio.png";
+import alan2 from "../img/projectimage/alan.png"
 
 
 
@@ -17,11 +18,11 @@ const portfolios = [
   {
     id: 10,
     category: "React JS",
-    image: portfolio,
+    image: alan2,
     link1: "https://github.com/capzink/AlanAi-NewsApp",
     link2: "https://alan-ai-news-capzink.netlify.app",
     title: "React JS",
-    text: "Using AI voice commands, search News, get Alan to read the News for you, or have a casual conversation",
+    text: "Alan AI, allow you to search with Voice Commands the News from various Sources, or have a casual conversation",
   },
   {
     id: 9,
