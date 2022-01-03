@@ -10,7 +10,19 @@ import portfolio from "../img/projectimage/portfolio.png";
 
 
 
+
+
+
 const portfolios = [
+  {
+    id: 10,
+    category: "React JS",
+    image: portfolio,
+    link1: "https://github.com/capzink/AlanAi-NewsApp",
+    link2: "https://alan-ai-news-capzink.netlify.app",
+    title: "React JS",
+    text: "Using AI voice commands, search News, get Alan to read the News for you, or have a casual conversation",
+  },
   {
     id: 9,
     category: "React JS",
